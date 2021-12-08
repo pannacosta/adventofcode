@@ -17,10 +17,9 @@ def lanternfish_pop(input_dict, days):
     for day in range(0,days):
         timer_decay_by_1 = {k-1:v for k,v in input_dict.items()}
         new_dict = defaultdict(int,timer_decay_by_1)
-        if -1 in new_dict.keys():
-            new_dict[8] = new_dict[8] +  new_dict[-1]
-            new_dict[6] = new_dict[-1]+new_dict[6]
-            del new_dict[-1]
+        new_dict[8] = new_dict[8] +  new_dict[-1]
+        new_dict[6] = new_dict[-1]+new_dict[6]
+        del new_dict[-1]
         input_dict = new_dict
     print(sum(new_dict.values()))
         
