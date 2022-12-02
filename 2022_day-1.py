@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 
-my_file = open("C:/Users/pauls/Desktop/input_2022_d1.txt", "r")
+my_file = open("input_2022_d1.txt", "r")
 content = my_file.read()
 puzzle_input_d1 = content.split("\n\n")
 my_file.close()
