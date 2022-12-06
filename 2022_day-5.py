@@ -5,7 +5,7 @@ import numpy as np
 
 #whatever I Don't care it assumes there are 9 stacks
 
-my_file = open("C:/Users/pauls/Desktop/input_2022_d5.txt", "r")
+my_file = open("input_2022_d5.txt", "r")
 content = my_file.read()
 puzzle_input_d5 = content.split("\n")
 my_file.close()
@@ -37,7 +37,7 @@ def cratemover_9001(directions,entry_dict):
     num_boxes,start,end = directions
     
     if num_boxes == 1:
-        for box in entry_dict[start][-num_boxes:]:
+        for box in entry_dict[start][-num_boxes:][::-1]:
             entry_dict[end].append(box)
     elif num_boxes > 1:
         for box in entry_dict[start][-num_boxes:]:
